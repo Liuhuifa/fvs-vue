@@ -4,7 +4,7 @@
       <el-header>
         <el-col class="right">
           <el-col class="right_left">
-            <el-link type="primary" href="">登录</el-link>
+            <el-link type="primary" href="http://192.168.157.131/oauth/authorize?client_id=e5170418-8560-460b-9296-d7bd95a06a5e&response_type=code&scope=all&redirect_uri=http://192.168.157.131">登录</el-link>
             /
             <el-link type="success">注册</el-link>
           </el-col>

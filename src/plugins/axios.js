@@ -2,7 +2,7 @@
 
 import Vue from 'vue';
 import axios from "axios";
-import router from "@/router";
+import router from "@/login/router";
 
 
 // Full config:  https://github.com/axios/axios#request-config
@@ -39,7 +39,7 @@ _axios.interceptors.request.use(
 _axios.interceptors.response.use(
     function (response) {
         // Do something with response data
-        console.log(response)
+        // console.log(response)
         if (response.data.code === 480) {
             router.push('/login').then(r => console.log(r))
             return;
@@ -52,8 +52,8 @@ _axios.interceptors.response.use(
     }
 );
 
-Plugin.install = function (Vue, options) {
-    console.log(options)
+// Plugin.install = function (Vue, options) {
+Plugin.install = function (Vue) {
     Vue.axios = _axios;
     window.axios = _axios;
     Object.defineProperties(Vue.prototype, {

@@ -1,21 +1,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 // import Home from '@/components/Home'
-import SysUser from '../views/sys/SysUser'
+import Login from "@/views/Login";
 import Cookies from 'js-cookie';
 
 Vue.use(VueRouter)
 
 const routes = [
-
     {
         path: '/',
-        redirect: '/user'
+        redirect: '/login'
     },
     {
-        path: '/user',
-        name: '用户管理',
-        component: SysUser,
+        path: '/login',
+        name: '登录',
+        component: Login
     }
 ]
 
