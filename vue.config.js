@@ -21,7 +21,7 @@ module.exports = {
         login: {
             entry: 'src/login/main.js',
             template: 'public/login.html',
-            filename: 'login.htm',
+            filename: 'security',
             title: '登录',
         }
     }

@@ -6,6 +6,8 @@ import store from './store'
 import './plugins/element'
 import qs from 'qs'
 import '@/theme/style'
+import './plugins/oauth'
+import './plugins/cookie'
 Vue.config.productionTip = false
 
 new Vue({

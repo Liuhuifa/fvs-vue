@@ -2,7 +2,8 @@
 
 import Vue from 'vue';
 import axios from "axios";
-import router from "@/login/router";
+import Cookies from 'js-cookie'
+// import router from "@/login/router";
 
 
 // Full config:  https://github.com/axios/axios#request-config
@@ -12,8 +13,8 @@ axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.headers.put['Content-Type'] = 'application/json';
 axios.defaults.headers.get['Content-Type'] = 'application/json';
 axios.defaults.headers.delete['Content-Type'] = 'application/json';
-axios.defaults.baseURL = 'http://localhost:1103/api';
-axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem("token");
+axios.defaults.baseURL = 'http://192.168.157.131/api';
+axios.defaults.headers.common['Authorization'] = 'Bearer ' + Cookies.get("token");
 
 
 let config = {
@@ -21,6 +22,7 @@ let config = {
     timeout: 60 * 1000, // Timeout
     withCredentials: true, // Check cross-site Access-Control
 };
+
 
 const _axios = axios.create(config);
 
@@ -41,7 +43,7 @@ _axios.interceptors.response.use(
         // Do something with response data
         // console.log(response)
         if (response.data.code === 480) {
-            router.push('/login').then(r => console.log(r))
+            window.location.href='/auth/oauth/authorize?client_id=e5170418-8560-460b-9296-d7bd95a06a5e&response_type=code&scope=all&redirect_uri=http://192.168.157.131/security'
             return;
         }
         return response;
@@ -69,6 +71,7 @@ Plugin.install = function (Vue) {
         },
     });
 };
+
 
 Vue.use(Plugin)
 

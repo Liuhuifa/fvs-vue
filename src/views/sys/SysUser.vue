@@ -188,7 +188,7 @@ export default {
         if (!valid) {
           alert("123")
         } else {
-          this.axios.post('/sys-user/insert', this.addForm).then(function (result) {
+          this.axios.post('/user/sys-user/insert', this.addForm).then(function (result) {
             console.log(result)
           })
         }
