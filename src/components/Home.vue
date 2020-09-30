@@ -44,8 +44,8 @@
                   <span>导航一</span>
                 </template>
                 <el-menu-item index="/user">用户管理</el-menu-item>
-                <el-menu-item index="2">角色管理</el-menu-item>
-                <el-menu-item index="3">权限管理</el-menu-item>
+                <el-menu-item index="/role">角色管理</el-menu-item>
+                <el-menu-item index="/per">权限管理</el-menu-item>
                 <el-menu-item index="4">菜单管理</el-menu-item>
               </el-submenu>
               <el-submenu index="2">

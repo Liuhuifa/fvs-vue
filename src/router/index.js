@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 // import Home from '@/components/Home'
 import SysUser from '../views/sys/SysUser'
 import Cookies from 'js-cookie';
+import SysRole from "@/views/sys/SysRole";
+import SysPer from "@/views/sys/SysPer";
 
 Vue.use(VueRouter)
 
@@ -16,6 +18,16 @@ const routes = [
         path: '/user',
         name: '用户管理',
         component: SysUser,
+    },
+    {
+        path: '/role',
+        name: '角色管理',
+        component: SysRole,
+    },
+    {
+        path: '/per',
+        name: '权限管理',
+        component: SysPer
     }
 ]
 
