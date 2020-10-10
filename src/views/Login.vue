@@ -11,7 +11,7 @@
 
 <script>
 // import Cookie from 'js-cookie'
-
+// import { mapMutations } from 'vuex'
 export default {
   name: "Login",
   data() {
@@ -51,11 +51,12 @@ export default {
           redirect_uri: 'http://192.168.157.131/security'
         }
       }).then(res => {
+
         this.Cookie.set("token", res.data.access_token)
         this.Cookie.set("expires_in", res.data.expires_in)
         this.Cookie.set("scope", res.data.scope)
-        this.Cookie.set("token_type", res.data.token_type)
-
+        this.Cookie.set("token_type", res.data.token_type);
+        this.$store.commit('userInfo',res.data.info)
         this.toIndex();
 
       })

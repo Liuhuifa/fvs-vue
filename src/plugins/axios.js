@@ -11,8 +11,8 @@ import Cookies from 'js-cookie'
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.headers.put['Content-Type'] = 'application/json';
-axios.defaults.headers.get['Content-Type'] = 'application/json';
-axios.defaults.headers.delete['Content-Type'] = 'application/json';
+// axios.defaults.headers.get['Content-Type'] = 'application/json';
+// axios.defaults.headers.delete['Content-Type'] = 'application/json';
 axios.defaults.baseURL = 'http://192.168.157.131/api';
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + Cookies.get("token");
 
