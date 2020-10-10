@@ -4,13 +4,13 @@
       <el-header>
         <el-col class="right">
           <el-col class="right_left">
-                        <el-link type="primary"
-                                 href="/auth/oauth/authorize?client_id=e5170418-8560-460b-9296-d7bd95a06a5e&response_type=code&scope=all&redirect_uri=http://192.168.157.131/security">
-                          登录
-                        </el-link>
-<!--            <el-link type="primary" @click="login">-->
-<!--              登录-->
-<!--            </el-link>-->
+            <el-link type="primary"
+                     href="/auth/oauth/authorize?client_id=e5170418-8560-460b-9296-d7bd95a06a5e&response_type=code&scope=all&redirect_uri=http://192.168.157.131/security">
+              登录
+            </el-link>
+            <!--            <el-link type="primary" @click="login">-->
+            <!--              登录-->
+            <!--            </el-link>-->
             /
             <el-link type="success">注册</el-link>
           </el-col>
@@ -96,10 +96,16 @@ export default {
       html: null
     }
   },
+  mounted() {
+    let user = this.$store.state.user;
+    if (!user) {
+      return;
+    }
+    console.log(user)
+
+  },
   methods: {
     login() {
-      // this.
-      console.log(this)
       this.$oauth.get("/oauth/authorize", {
         params: {
           client_id: 'e5170418-8560-460b-9296-d7bd95a06a5e',

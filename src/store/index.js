@@ -10,8 +10,14 @@ var ls = new SecureLS({isCompression: false});
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-    state: {},
-    mutations: {},
+    state: {
+        user: null,
+    },
+    mutations: {
+        userInfo(state, info) {
+            state.user = info;
+        }
+    },
     actions: {},
     modules: {},
     plugins: [createPersistedState({
